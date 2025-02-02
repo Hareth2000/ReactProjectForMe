@@ -1,0 +1,230 @@
+/* تخصيص خلفية صفحة "من نحن" */
+.about-us-container {
+  background-color: #e3f2fd; /* لون أزرق فاتح */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* تخصيص محتوى صفحة "من نحن" */
+.about-us-content {
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 3rem;
+  max-width: 1000px;
+  width: 100%;
+  animation: slideUp 1s ease-out;
+}
+
+/* تخصيص رأس الصفحة */
+.about-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about-header h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2979ff; /* اللون الأزرق الفاتح */
+  animation: fadeIn 1s ease-out;
+}
+
+.about-header p {
+  color: #333;
+  font-size: 1.125rem;
+  margin-top: 1rem;
+  opacity: 0.8;
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* تخصيص المحتوى الرئيسي */
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  animation: fadeIn 2s ease-out;
+}
+
+/* تخصيص وصف "من نحن" */
+.about-description p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* تخصيص صورة "من نحن" */
+.about-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 0.5rem;
+  height: 300px;
+  transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+}
+
+/* تخصيص فريق العمل */
+.about-team {
+  margin-top: 3rem;
+  text-align: center;
+  animation: fadeIn 3s ease-out;
+}
+
+.about-team h3 {
+  font-size: 2rem;
+  color: #2979ff;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.team-members {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  animation: fadeIn 4s ease-out;
+}
+
+.team-member {
+  text-align: center;
+  max-width: 250px;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.team-member:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.team-member:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.team-member:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.team-member:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.team-member:nth-child(5) {
+  animation-delay: 1s;
+}
+
+/* إضافة دوائر حول صور أعضاء الفريق */
+.team-member img {
+  width: 100%;
+  max-width: 150px;
+  border-radius: 50%;  /* تحويل الصورة إلى دائرة */
+  margin-bottom: 1rem;
+  border: 4px solid #2979ff; /* حافة دائرية باللون الأزرق */
+  padding: 5px;  /* إضافة مسافة بين الصورة والحافة */
+  transition: transform 0.3s ease;
+}
+
+.team-member img:hover {
+  transform: scale(1.1);
+}
+
+.team-member h4 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.team-member p {
+  color: #4b5563;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* الأنميشنات */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+      transform: translateY(30px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* تخصيص للـ Mobile - تعديل التصفح لأجهزة الجوال */
+@media (max-width: 768px) {
+  /* تغيير التخطيط عند الشاشات الصغيرة */
+  .about-content {
+      grid-template-columns: 1fr; /* تحويلها إلى عمود واحد */
+      padding: 1rem;
+  }
+
+  .about-header h2 {
+      font-size: 2rem;
+  }
+
+  .about-header p {
+      font-size: 1rem;
+  }
+
+  .about-team h3 {
+      font-size: 1.5rem;
+  }
+
+  .team-members {
+      flex-direction: column; /* تغيير ترتيب الأعضاء إلى عمود */
+      gap: 1.5rem;
+  }
+
+  .team-member {
+      max-width: 100%;
+      animation: fadeInUp 1.5s ease-out forwards;
+  }
+}
+
+/* تخصيص للـ Tablet - عند الشاشات المتوسطة */
+@media (max-width: 1024px) {
+  .about-content {
+      grid-template-columns: 1fr 1fr;
+  }
+
+  .about-header h2 {
+      font-size: 2.2rem;
+  }
+
+  .about-header p {
+      font-size: 1.1rem;
+  }
+
+  .team-member img {
+      max-width: 120px; /* تصغير الصور قليلاً */
+  }
+}
